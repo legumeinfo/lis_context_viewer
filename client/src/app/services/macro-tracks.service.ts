@@ -43,6 +43,7 @@ export class MacroTracksService {
   getChromosome(
     source: string,
     chromosome: string,
+    species_id: number,
     success = e => {},
     failure = e => {}
   ): void {
@@ -51,7 +52,7 @@ export class MacroTracksService {
     if (idx != -1) {
       let s: Server = AppConfig.SERVERS[idx];
       if (s.hasOwnProperty('chromosome')) {
-        let args = {chromosome: chromosome} as RequestOptionsArgs;
+        let args = {chromosome: chromosome, species_id: species_id} as RequestOptionsArgs;
         let response: Observable<Response>;
         if (s.chromosome.type === GET)
           response = this._http.get(s.chromosome.url, args)

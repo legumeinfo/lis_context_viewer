@@ -888,9 +888,9 @@ def v1_1_chromosome(request):
     # parse the POST data (Angular puts it in the request body)
     POST = json.loads(request.body)
     # make sure the request type is POST and that it contains a query (families)
-    if request.method == 'POST' and 'chromosome' in POST:
+    if request.method == 'POST' and 'chromosome' in POST and 'species_id' in POST:
         # get the query chromosome
-        chromosome = get_object_or_404(Feature, name=POST['chromosome'])
+        chromosome = get_object_or_404(Feature, name=POST['chromosome'], organism_id=POST['species_id'])
 
         # get all the genes on the query chromosomes
         genes = list(GeneOrder.objects.only(

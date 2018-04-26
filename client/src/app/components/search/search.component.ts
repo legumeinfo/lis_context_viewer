@@ -213,6 +213,7 @@ export class SearchComponent implements AfterViewInit, OnInit {
       this._macroTracksService.getChromosome(
         query.source,
         query.chromosome_name,
+        query.species_id,
         chromosome => {
           this._macroTracksService.federatedSearch(
             query.chromosome_name,
