@@ -89,7 +89,7 @@ export class Micro extends Visualizer {
           maxDistance = Math.max(maxDistance, dist);
         }
       }
-      this.names.push(group.chromosome_name + ':' + fminI + '-' + fmaxI);
+      this.names.push(group.genus + ' ' + group.species + '___' + group.chromosome_name + ':' + fminI + '..' + fmaxI);
       this.distances.push(distances);
     }
     // initialize the x, y, and line thickness scales
@@ -228,8 +228,8 @@ export class Micro extends Visualizer {
   	  });
     // draw the background highlight
     if (i % 2) {
-      var highY = obj.y(y)+genes.node().getBBox().y,
-          height = track.node().getBBox().height - highY;
+      var highY = obj.y(y)+genes.node().getBBox().y - 4,
+          height = track.node().getBBox().height - highY + 6;
       track.highlight = track.append('rect')
         .attr('y', highY)
         .attr('height', height)
@@ -275,7 +275,7 @@ export class Micro extends Visualizer {
         .attr('transform', function (t) {
           var tRect = this.getBoundingClientRect(),
               h = Math.sqrt(Math.pow(tRect.width, 2) / 2),  // rotated height
-              o = (tRect.bottom + h > vRect.bottom) ? h : 0;
+              o = (tRect.bottom + h > vRect.bottom) ? h + 10 : -10;
           return 'translate(' + o + ', ' + (-o) + ') rotate(-45)';
         })
         .classed('synteny-tip', true);
@@ -333,6 +333,33 @@ export class Micro extends Visualizer {
       .on('click', (y, i) => {
         this.options.nameClick(this.data.groups[i]);
       });
+
+
+    yAxis.selectAll('text').each(function() {
+
+      var text = d3.select(this),
+        words = text.text().split(/___/).reverse(),
+        word,
+        line = [],
+        lineNumber = 0,
+        lineHeight = 1.1, // ems
+        y = text.attr("y"),
+        first = true;
+
+      text.attr('dy', 0);
+
+      var dy = parseFloat(text.attr("dy"));
+
+      while (word = words.pop()) {
+        if (first) {
+          text.text(word);
+          first = false;
+        }
+        else {
+          text.append("tspan").attr("x", text.attr('x')).attr("y", y).attr("dy", ++lineNumber * lineHeight + dy + "em").text(word);
+        }
+      }
+    });
     return yAxis;
   }
 
@@ -404,7 +431,7 @@ export class Micro extends Visualizer {
     }
     this.resize();
   }
-  
+
   // Public
 
   /** Makes a copy of the SVG and inlines external GCV styles. */
