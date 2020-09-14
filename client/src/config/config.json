@@ -67,7 +67,7 @@
       },
       "genes": {
         "type": "POST",
-        "url": "http://localhost:8000/services/v2/genes/"
+        "url": "http://localhost:8080/genes"
       },
       "blocks": {
         "type": "POST",
