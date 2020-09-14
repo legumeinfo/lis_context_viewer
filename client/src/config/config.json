@@ -62,8 +62,8 @@
         "url": "http://legumeinfo.org/chado_gene_phylotree_v2?family="
       },
       "chromosome": {
-        "type": "POST",
-        "url": "http://localhost:8000/services/v2/chromosome/"
+        "type": "GET",
+        "url": "http://localhost:8080/chromosome"
       },
       "genes": {
         "type": "POST",
