@@ -51,7 +51,7 @@
       },
       "microSearch": {
         "type": "POST",
-        "url": "http://localhost:8000/services/v2/micro-synteny-search/"
+        "url": "http://localhost:8080/micro-synteny-search"
       },
       "geneLinks": {
         "type": "GET",
@@ -79,7 +79,7 @@
       },
       "region": {
         "type": "GET",
-        "url": "http://localhost:8083/chromosome-region"
+        "url": "http://localhost:8080/chromosome-region"
       }
     }
   ]
