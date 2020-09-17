@@ -38,7 +38,7 @@ export class PairwiseBlocksService extends HttpService {
     targets: string[] = []):
   Observable<PairwiseBlocks[]> {
     const body = {
-      families: chromosome.families,
+      chromosome: chromosome.families,
       intermediate: blockParams.bintermediate,
       mask: blockParams.bmask,
       matched: blockParams.bmatched,

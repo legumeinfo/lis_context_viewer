@@ -71,7 +71,7 @@
       },
       "blocks": {
         "type": "POST",
-        "url": "http://localhost:8000/services/v2/pairwise-blocks/"
+        "url": "http://localhost:8080/macro-synteny-blocks"
       },
       "search": {
         "type": "GET",
