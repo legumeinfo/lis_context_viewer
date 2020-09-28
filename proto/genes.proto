@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "lis.gcv.genes";
+option java_outer_classname = "GenesProto";
+option objc_class_prefix = "GS";
+
+package genes;
+
+
+service Genes {
+  rpc Get (GetRequest) returns (GetReply) {}
+}
+
+
+message GetRequest {
+  repeated string names = 1;
+}
+
+
+message GetReply {
+  repeated Gene genes = 1;
+}
+
+message Gene {
+  string name = 1;
+  uint32 fmin = 2;
+  uint32 fmax = 3;
+  uint32 strand = 4;
+  string family = 5;
+  string chromosome = 6;
+}

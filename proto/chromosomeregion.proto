@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "lis.gcv.chromosomeregion";
+option java_outer_classname = "ChromosomeRegionProto";
+option objc_class_prefix = "GS";
+
+package chromosomeregion;
+
+
+service ChromosomeRegion {
+  rpc GetRegion (RegionRequest) returns (RegionReply) {}
+}
+
+
+message RegionRequest {
+  string chromosome = 1;
+  uint32 start = 2;
+  uint32 stop = 3;
+}
+
+message RegionReply {
+  string gene = 1;
+  int32 neighbors = 2;
+}

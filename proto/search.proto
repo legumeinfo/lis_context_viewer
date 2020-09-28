@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "lis.gcv.search";
+option java_outer_classname = "SearchProto";
+option objc_class_prefix = "S";
+
+package search;
+
+
+service Search {
+  rpc Search (SearchRequest) returns (SearchReply) {}
+}
+
+
+message SearchRequest {
+  string query = 1;
+}
+
+
+message SearchReply {
+  repeated string genes = 1;
+  repeated Region regions = 2;
+}
+
+message Region {
+  string gene = 1;
+  uint32 neighbors = 2;
+}

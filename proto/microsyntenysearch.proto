@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "lis.gcv.microsyntenysearch";
+option java_outer_classname = "MicroSyntenySearchProto";
+option objc_class_prefix = "GS";
+
+package microsyntenysearch;
+
+
+service MicroSyntenySearch {
+  rpc Search (SearchRequest) returns (SearchReply) {}
+}
+
+
+message SearchRequest {
+  repeated string query = 1;
+  float matched = 2;
+  float intermediate = 3;
+}
+
+
+message SearchReply {
+  repeated Track tracks = 1;
+}
+
+message Track {
+  string name = 1;
+  string genus = 2;
+  string species = 3;
+  repeated string genes = 4;
+  repeated string families = 5;
+}
