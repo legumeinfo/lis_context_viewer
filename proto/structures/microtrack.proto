@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+import "structures/track.proto";
+
+package gcv.structures;
+
+
+message MicroTrack {
+  string name = 1;
+  Track track = 2;
+}

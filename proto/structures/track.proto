@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package gcv.structures;
+
+
+message Track {
+  string genus = 2;
+  string species = 3;
+  repeated string genes = 4;
+  repeated string families = 5;
+}

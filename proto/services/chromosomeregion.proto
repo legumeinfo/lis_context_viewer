@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+import "structures/region.proto";
+
+package gcv.services;
+
+
+service ChromosomeRegion {
+  rpc Get (ChromosomeRegionGetRequest) returns (ChromosomeRegionGetReply) {}
+}
+
+
+message ChromosomeRegionGetRequest {
+  string chromosome = 1;
+  uint32 start = 2;
+  uint32 stop = 3;
+}
+
+message ChromosomeRegionGetReply {
+  gcv.structures.Region region = 1;
+}

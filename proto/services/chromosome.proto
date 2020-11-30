@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+import "structures/chromosome.proto";
+
+package gcv.services;
+
+
+service Chromosome {
+  rpc Get (ChromosomeGetRequest) returns (ChromosomeGetReply) {}
+}
+
+
+message ChromosomeGetRequest {
+  string name = 1;
+}
+
+
+message ChromosomeGetReply {
+  gcv.structures.Chromosome chromosome = 1;
+}

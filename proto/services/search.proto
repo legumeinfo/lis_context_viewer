@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+import "structures/region.proto";
+
+package gcv.services;
+
+
+service Search {
+  rpc Search (SearchRequest) returns (SearchReply) {}
+}
+
+
+message SearchRequest {
+  string query = 1;
+}
+
+
+message SearchReply {
+  repeated string genes = 1;
+  repeated gcv.structures.Region regions = 2;
+}

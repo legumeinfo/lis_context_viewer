@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package gcv.services;
+
+
+service ChromosomeSearch {
+  rpc Search (ChromosomeSearchRequest) returns (ChromosomeSearchReply) {}
+}
+
+
+message ChromosomeSearchRequest {
+  string query = 1;
+}
+
+
+message ChromosomeSearchReply {
+  repeated string chromosomes = 1;
+}

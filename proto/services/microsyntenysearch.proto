@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+import "structures/microtrack.proto";
+
+package gcv.services;
+
+
+service MicroSyntenySearch {
+  rpc Search (MicroSyntenySearchRequest) returns (MicroSyntenySearchReply) {}
+}
+
+
+message MicroSyntenySearchRequest {
+  repeated string query = 1;
+  float matched = 2;
+  float intermediate = 3;
+}
+
+
+message MicroSyntenySearchReply {
+  repeated gcv.structures.MicroTrack tracks = 1;
+}

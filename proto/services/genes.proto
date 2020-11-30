@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+import "structures/gene.proto";
+
+package gcv.services;
+
+
+service Genes {
+  rpc Get (GenesGetRequest) returns (GenesGetReply) {}
+}
+
+
+message GenesGetRequest {
+  repeated string names = 1;
+}
+
+
+message GenesGetReply {
+  repeated gcv.structures.Gene genes = 1;
+}

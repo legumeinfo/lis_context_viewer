@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package gcv.services;
+
+
+service GeneSearch {
+  rpc Search (GeneSearchRequest) returns (GeneSearchReply) {}
+}
+
+
+message GeneSearchRequest {
+  string query = 1;
+}
+
+
+message GeneSearchReply {
+  repeated string genes = 1;
+}

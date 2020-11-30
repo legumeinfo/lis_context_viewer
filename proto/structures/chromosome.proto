@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+import "structures/track.proto";
+
+package gcv.structures;
+
+
+message Chromosome {
+  uint32 length = 1;
+  Track track = 2;
+}

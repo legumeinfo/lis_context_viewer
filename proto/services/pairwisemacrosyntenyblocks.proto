@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+import "structures/block.proto";
+
+package gcv.services;
+
+
+service PairwiseMacroSyntenyBlocks {
+  rpc Compute (PairwiseMacroSyntenyBlocksComputeRequest) returns (PairwiseMacroSyntenyBlocksComputeReply) {}
+}
+
+
+message PairwiseMacroSyntenyBlocksComputeRequest {
+  repeated string chromosome = 1;
+  string target = 2;
+  uint32 matched = 3;
+  uint32 intermediate = 4;
+  optional uint32 mask = 5;
+}
+
+
+message PairwiseMacroSyntenyBlocksComputeReply {
+  repeated gcv.structures.Block blocks = 1;
+}
