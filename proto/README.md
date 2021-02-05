@@ -32,7 +32,7 @@ Once `protoc` and the `grpc-web` plugin are installed, JavaScript files with Typ
 
     $ cd proto/
     proto/ $ mkdir typescript
-    protoc $ protoc -I=./ \
+    proto/ $ protoc -I=./ \
              --js_out=import_style=commonjs,binary:./typescript \
              --grpc-web_out=import_style=typescript,mode=grpcwebtext:./typescript \
              ./structures/*.proto ./services/*.proto --experimental_allow_proto3_optional

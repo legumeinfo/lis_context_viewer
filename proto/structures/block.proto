@@ -16,4 +16,5 @@ message Block {
   uint32 fmin = 3;
   uint32 fmax = 4;
   string orientation = 5;
+  repeated float optionalMetrics = 6;
 }

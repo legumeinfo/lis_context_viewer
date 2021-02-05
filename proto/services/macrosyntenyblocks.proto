@@ -16,6 +16,7 @@ message MacroSyntenyBlocksComputeRequest {
   uint32 intermediate = 3;
   optional uint32 mask = 4;
   repeated string targets = 5;
+  repeated string optionalMetrics = 6;
 }
 
 

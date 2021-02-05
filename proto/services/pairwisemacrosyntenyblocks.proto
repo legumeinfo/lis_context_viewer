@@ -16,6 +16,7 @@ message PairwiseMacroSyntenyBlocksComputeRequest {
   uint32 matched = 3;
   uint32 intermediate = 4;
   optional uint32 mask = 5;
+  repeated string optionalMetrics = 6;
 }
 
 
