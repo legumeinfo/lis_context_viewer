@@ -163,6 +163,6 @@ LOGGING = {
 #app-specific settings:
 # this controls what types of chado gene-containing features (ie src_features) will be considered 
 # when macrosynteny blocks are being calculated against the query track's source feature
-GCV_MACROSYNTENY_TARGET_TYPES = ['chromosome']
+#GCV_MACROSYNTENY_TARGET_TYPES = ['chromosome']
 # a common alternative to above for support fragmented genomes
-# GCV_MACROSYNTENY_TARGET_TYPES = ['chromosome','supercontig']
+GCV_MACROSYNTENY_TARGET_TYPES = ['chromosome','supercontig']
