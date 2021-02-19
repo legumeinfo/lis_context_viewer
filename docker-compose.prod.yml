@@ -38,7 +38,7 @@ services:
       test: "nc -z localhost 8000"
     command: >
       sh -c 'while ! nc -z local:/run/postgresql/.s.PGSQL.5432; do sleep 1; done &&
-             exec gunicorn --bind 0.0.0.0:8000 server.wsgi'
+             exec gunicorn --timeout 120 --bind 0.0.0.0:8000 server.wsgi'
     volumes:
       - postgres-sock:/run/postgresql
 
