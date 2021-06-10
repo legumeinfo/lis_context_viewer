@@ -1,5 +1,5 @@
 asgiref==3.3.4
-Django==3.2.2
+Django==3.2.4
 django-cors-headers==3.7.0
 psycopg2==2.8.6
 pytz==2020.1
